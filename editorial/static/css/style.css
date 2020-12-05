@@ -1,0 +1,104 @@
+.container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 3px solid #bfbfbf;
+    position: fixed;
+    overflow: hidden;
+    background-color: #f2f2f2;
+    top: 0;
+    width: 100%;
+    box-shadow: 10px 5px 5px #cccccc;
+}
+
+.button {
+  background-color: white;
+  border: 4px;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 20px;
+  width: 250px;
+  border-style: solid;
+  border-color: #F52521;
+  vertical-align: middle;
+  font-family: Arial;
+  box-shadow: 10px 5px 5px #cccccc;
+}
+
+.button:hover {
+  background-color: #F5949A;
+  cursor:pointer;
+}
+
+.middle_part {
+  background-image: url("/static/assets/hen_and_chicks.jpeg");
+  height: 1000px;
+  background-repeat: no-repeat;
+  font-family: Verdana;
+  margin-top: 175px;
+  vertical-align: text-bottom;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main_title {
+  font-family: Arial;
+  font-size: 72px;
+}
+
+.main_subtitle {
+  font-family: Arial;
+  font-size: 44px;
+}
+
+.second_part {
+  height: 1000px;
+  font-family: Verdana;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: space-around;
+  align-content: space-around;
+  flex-wrap: wrap;
+}
+
+.presentation-box {
+  height: 45%;
+  width: 45%;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 10px 5px 5px #cccccc;
+}
+
+.edito_section {
+  display: flex;
+  margin-top: 175px;
+}
+
+.titles-articles {
+  background-color: #f2f2f2;
+  width: 400px;
+  box-shadow: 10px 5px 5px #cccccc;
+  position: fixed;
+  overflow: hidden;
+}
+
+.articles_presentation {
+padding-left: 450px;
+
+}
+
+ .standard-article {
+  font-family: Arial;
+  font-size: 25px;
+ }
+
+.standard-title {
+  font-family: Arial;
+  font-size: 30px;
+}
