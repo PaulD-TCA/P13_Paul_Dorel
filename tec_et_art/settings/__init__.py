@@ -93,9 +93,9 @@ WSGI_APPLICATION = 'tec_et_art.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': env('DB_NAME'),
-        'USER': env('DB_USER'),
-        'PASSWORD': env('DB_PASSWORD'),
+        'NAME': 'tec_et_art_data_base',
+        'USER': 'pauldorel',
+        'PASSWORD': '',
         'HOST': '',
         'PORT': '5432',
     }
