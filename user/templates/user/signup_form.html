@@ -1,0 +1,22 @@
+<section class="user_section">
+
+{% block content %}
+  <form class="user_box" method="POST">
+    <h3 class="standard-title">
+    Créer un compte
+    </h3>
+    {% csrf_token %}
+    {% for field in form %}
+        {{ field }}
+        {% if field.help_text %}
+          <small style="color: grey">{{ field.help_text }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+    {% endfor %}
+    <button class="button" type="submit">Sign up</button>
+{% endblock %}
+  </form>
+
+</section>
