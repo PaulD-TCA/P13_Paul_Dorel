@@ -21,5 +21,5 @@ urlpatterns = [
     path('', include('editorial.urls')),
     path('editorial/', include('editorial.urls')),
     path('user/', include('user.urls')),
-    path('design/', include('design.urls')),
+    # path('design/', include('design.urls')),
 ]
