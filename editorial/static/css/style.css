@@ -35,6 +35,29 @@
   cursor:pointer;
 }
 
+.input_button {
+  background-color: white;
+  border: 4px;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 20px;
+  width: 250px;
+  border-style: solid;
+  border-color: #E0C22D;
+  vertical-align: middle;
+  font-family: Arial;
+  box-shadow: 10px 5px 5px #cccccc;
+}
+
+.input_button:hover {
+  background-color: #FFF3B7;
+  cursor:pointer;
+}
+
+
 .middle_part {
   background-image: url("/static/assets/hen_and_chicks.jpeg");
   height: 1000px;
@@ -89,7 +112,7 @@
 }
 
 .articles_presentation {
-padding-left: 450px;
+  padding-left: 450px;
 
 }
 
@@ -101,4 +124,29 @@ padding-left: 450px;
 .standard-title {
   font-family: Arial;
   font-size: 30px;
+}
+
+.user_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 800px;
+  margin-top: 175px;
+
+}
+
+.user_box {
+  display: flex;
+  flex-direction: column;
+  margin:30px;
+  align-items: center;
+  align-content: space-around;
+  width: 45%;
+  border-radius: 20px;
+  background-color: #f2f2f2;
+  box-shadow: 10px 5px 5px #cccccc;
+}
+
+.user_btn {
+  margin-bottom: 30px;
 }

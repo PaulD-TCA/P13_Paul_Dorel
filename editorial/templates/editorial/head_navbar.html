@@ -14,14 +14,14 @@
 
             <div>
               <a href="{% url 'home' %}">
-                <img src="/static/assets/logo_tec_et_art.jpg" height="150">
+                <img src="{% static '/assets/logo_tec_et_art.jpg' %}" height="150" alt="logo tec et art">
               </a>
             </div>
 
             <form id='fname' name='fname' class="form-inline" method="post">
               {% csrf_token %}
 
-                <input class="button button4" type="text" placeholder="Objet à rechercher" name="your_name" maxlength="100" required>
+                <input class="input_button button4" type="text" placeholder="Objet à rechercher" name="your_name" maxlength="100" required>
 
             </form>
 
@@ -43,13 +43,25 @@
                 </a>
                 </div>
 
+
+                {% if user.is_authenticated %}
+                <div>
+                  <a href="{% url 'logout' %}">
+                <div class="button button3">
+
+                    <span>Se déconnecter</span>
+                    </div>
+                    </a>
+                  </div>
+                {% else %}
+              <div>
+                <a href="{% url 'login' %}">
               <div class="button button3">
-                <a>
                   <span>Connextion</span>
+                  </div>
                   </a>
                 </div>
-
-
+                {% endif %}
 
               </nav>
         </header>
