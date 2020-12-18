@@ -43,3 +43,10 @@ def user_signup(request):
     else:
         form = SignUpForm()
     return render(request, 'user/signup.html', {'form': form})
+
+
+def personal_datas(request):
+    """Modify user datas."""
+    template = loader.get_template('user/personal_datas.html')
+    context = {}
+    return HttpResponse(template.render(context, request))
