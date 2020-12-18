@@ -9,5 +9,5 @@ class TestUrls(SimpleTestCase):
         self.assertEquals(resolve(url).func, home)
 
     def test_project_presentation_url_resolved(self):
-        url = reverse('project_presentation') 
+        url = reverse('project_presentation')
         self.assertEquals(resolve(url).func, project_presentation)

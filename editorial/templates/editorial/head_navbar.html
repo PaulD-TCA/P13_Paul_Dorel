@@ -25,24 +25,19 @@
 
             </form>
 
-
-
+                <a href="{% url 'design_list' %}">
               <div class="button button1">
-                <a>
-                  <span>Catalogue</span>
-                  </a>
-                </div>
 
-              <div>
-                <a href="{% url 'project_presentation' %}">
-              <div class="button button2">
-
-                  <span>Le projet TEC et ART</span>
+                  <span>Designs</span>
 
                 </div>
                 </a>
-                </div>
 
+                <a href="{% url 'project_presentation' %}">
+              <div class="button button2">
+                  <span>Le projet TEC et ART</span>
+                </div>
+                </a>
 
                 {% if user.is_authenticated %}
                 <div>

@@ -1,20 +1,63 @@
 
         <section class="middle_part">
+          {% if user.is_authenticated %}
+          <section class="user_space">
+
+            <h3 class="standard-title">
+            Bonjour {{ request.user}}
+            </h3>
+
+              <a href="{% url 'propose_design' %}">
+            <div class="button button1">
+                <span>Proposer un design</span>
+            </div>
+            </a>
+
+            <a href="{% url 'my_design' %}">
+            <div class="button button1">
+                <span>Voir mes designs</span>
+            </div>
+            </a>
+
+            <a href="{% url 'my_offers' %}">
+            <div class="button button1">
+                <span>Voir mes propositions</span>
+            </div>
+            </a>
+
+            <a href="{% url 'messages' %}">
+            <div class="button button1">
+                <span>Voir mes messages</span>
+            </div>
+            </a>
+
+            <a href="{% url 'personal_datas' %}">
+            <div class="button button1">
+                <span>Modifier mon profil</span>
+            </div>
+            </a>
+
+            </section>
+          {% else %}
+
           <div class="wtitting">
 
-            <!-- <div id="home_main_presentation"> -->
               <h1 class="main_title">
-                Bienvenue sur TEC ET ART
+                 Bienvenue sur TEC ET ART
               </h1>
               <h2 class="main_subtitle">
                 Design, amélioration, réalisation, partage.
               </h2>
-              <!-- </div> -->
               </div>
+
+
 
         </section>
 
+
         <section class="second_part">
+
+
 
           <div class="presentation-box">
             <div>
@@ -83,5 +126,6 @@
               <img src="/static/assets/share3D.jpeg" alt="The share symbol" height="300">
             </div>
           </div>
+        {% endif %}
 
         </section>
