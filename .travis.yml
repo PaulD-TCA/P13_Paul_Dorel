@@ -29,4 +29,4 @@ services:
   - postgresql
 
 script:
-  - python3 manage.py test editorial user
+  - python3 manage.py test editorial user design community
