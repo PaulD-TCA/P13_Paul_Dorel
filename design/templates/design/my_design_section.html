@@ -1,0 +1,20 @@
+<section class="middle_part">
+
+<section class="profil_space">
+
+mes designs page
+{% for design in designs %}
+  <p>{{ design.design_name }}<p/>
+    <p>{{ design.design_image }}<p/>
+    <p>{{ design.plan_2d }}<p/>
+    <p>{{ design.plan_3d }}<p/>
+    <p>{{ design.assembly_instruction }}<p/>
+    <p>{{ design.description }}<p/>
+    <p>{{ design.user_id }}<p/>
+
+{% endfor %}
+
+
+</section>
+
+</section>

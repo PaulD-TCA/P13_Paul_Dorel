@@ -1,0 +1,26 @@
+{% include 'editorial/head_navbar.html' %}
+
+
+<section class="middle_part">
+
+<section class="profil_space">
+
+
+
+{% block content %}
+<h3 class="standard-title">
+  Envoyer un message
+</h3>
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Envoyer</button>
+  </form>
+{% endblock %}
+
+</section>
+
+</section>
+
+
+{% include 'editorial/footer.html' %}

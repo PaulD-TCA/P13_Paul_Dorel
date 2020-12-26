@@ -1,0 +1,33 @@
+{% include 'editorial/head_navbar.html' %}
+
+<section class="middle_part">
+
+<section class="profil_space">
+
+
+<h3 class="standard-title">
+  Liste d'offres
+
+  </h3>
+{% for offer in offer_list %}
+<h3>
+{{ offer.offer_title }}
+  </h3>
+<p>
+  {{ offer.price }}
+  </p>
+
+  <div>
+
+    <p><a href="{% url 'email_user' offer.user_id.id%}">Contacter {{ offer.user_id }}</a></p>
+    </div>
+
+
+{% endfor %}
+
+
+</section>
+
+</section>
+
+{% include 'editorial/footer.html' %}

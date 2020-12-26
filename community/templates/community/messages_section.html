@@ -1,0 +1,19 @@
+<section class="middle_part">
+
+<section class="profil_space">
+
+<h3 class="standard-title">
+Messages page
+  </h3>
+{% for message in messages_list %}
+<h3>
+{{ message.title }}
+  </h3>
+<p>
+  {{ message.content }}
+  </p>
+{% endfor %}
+
+</section>
+
+</section>

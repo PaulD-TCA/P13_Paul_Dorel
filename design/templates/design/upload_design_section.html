@@ -1,0 +1,31 @@
+<section class="middle_part">
+
+<section class="profil_space">
+  {% block content %}
+  <h3 class="standard-title">
+    Proposer un design
+  </h3>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">upload files</button>
+    </form>
+  {% endblock %}
+
+
+
+
+  <!-- <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="document">
+    <button type="submit">upload file</button>
+    {{ form }}
+    {% if url %}
+      <p>uploaded_file: <a href="{{ url }}">{{ url }}</a></p>
+    {% endif %}
+    </form> -->
+
+
+</section>
+
+</section>

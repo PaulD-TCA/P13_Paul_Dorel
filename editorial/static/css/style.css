@@ -185,6 +185,39 @@
   justify-content: space-around;
 }
 
+.catalog_design {
+  display: flex;
+  height: 45%;
+  width: 80%;
+  margin-top: 20px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 10px 5px 5px #cccccc;
+}
+
+.dowload_button {
+  background-color: white;
+  border: 4px;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 20px;
+  width: 250px;
+  height: 20px;
+  border-style: solid;
+  border-color: #119E95;
+  vertical-align: middle;
+  font-family: Arial;
+  box-shadow: 10px 5px 5px #cccccc;
+}
+
+.dowload_button:hover {
+  background-color: #119E95;
+  cursor:pointer;
+}
+
 @media screen and (max-device-width: 500px)
 {
 
