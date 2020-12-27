@@ -3,11 +3,6 @@ from django.http import HttpResponse
 from django.template import loader
 from django.contrib.auth.models import User
 
-# from pathlib import Path
-# BASE_DIR = Path(__file__).resolve().parent.parent
-# print("toto")
-# print(BASE_DIR)
-
 from design.models import Message, Offer, Design
 from .forms import MessageForm, OfferForm
 
@@ -23,7 +18,14 @@ def messages(request):
 def my_offers(request):
     """Display the main web page."""
     current_user = request.user.id
-    offer_list = Offer.objects.filter(user_id=current_user)
+    # offer_list = Offer.objects.select_related('design_id', 'user_id').filter(user_id=current_user)
+    offer_list = Offer.objects.filter(user_id=current_user).select_related()
+    # offer_list = Design.objects.prefetch_related('offer_set').get(user_id=current_user)
+    # offer_list = offer_list2.offer_set.all()
+    # offer_list = Design.objects.filter(offer_id__user_id=current_user)
+    print(offer_list)
+    for truc in offer_list:
+        print(truc)
     template = loader.get_template('community/my_offers.html')
     context = {'offer_list':offer_list}
     return HttpResponse(template.render(context, request))

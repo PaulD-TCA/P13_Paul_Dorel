@@ -49,6 +49,8 @@ def upload_design(request):
 
 def my_design(request):
     """Display the main web page."""
+    current_user = request.user.id
+    designs = Design.objects.filter(user_id=current_user)
     template = loader.get_template('design/my_design.html')
-    context = {}
+    context = {'designs': designs,}
     return HttpResponse(template.render(context, request))

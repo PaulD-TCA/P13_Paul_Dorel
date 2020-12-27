@@ -1,95 +1,68 @@
 <section class="middle_part">
 
-<section class="profil_space">
-
-<!-- {% block content %} -->
-<h2>first design list</h2>
-<table>
-<thead>
-  <tr>
-    <th>Nom</th>
-    <th>Image</th>
-    <th>Plan 2D</th>
-    <th>Plan 3D</th>
-    <th>Instructions d'assemblage</th>
-    <th>Description</th>
-    <th>Proposé par</th>
-    </tr>
-  </thead>
-
-  <tbody>
-{% for design in designs %}
-    <td>{{ design.design_name }}<td/>
-    <td>
-      {% if design.design_image %}
-        <img src="{{ design.design_image.url }}">
-        <!-- <img src="{{ design.design_image.url }}" alt="{{ design.design_name }}"> -->
-      {% endif %}
-      <td/>
-    <td>
-      <a href="{{ design.plan_2d.url }}" class="button button1" target="_blank">
-        Télécharger
-      <td/>
-    <td>{{ design.plan_3d }}<td/>
-    <td>{{ design.assembly_instruction }}<td/>
-    <td>{{ design.description }}<td/>
-    <td>{{ design.user_id }}<td/>
-
-{% endfor %}
-</tbody>
-</table>
-<!-- {% endblock %} -->
+<section class="design_space">
 
 
+  <h3 class="main_subtitle">Designs</h3>
   {% for design in designs %}
   <section class="catalog_design">
 
   <img src="{{ design.design_image.url }}" alt="A design_picture" height="300">
-  <div>
+
+  <div class="box_in_design">
   <h2>{{ design.design_name }}</h2>
-  <!-- <a href="{{ design.plan_2d.url }}" class="button button1" target="_blank"> -->
+  <p>{{ design.description }}</p>
+  </div>
+
+  <div class="box_in_design">
     <a href="{{ design.plan_2d.url }}">
   <div class="dowload_button">
-      <span>Télécharger les plans 2D</span>
+      <span>Plans 2D</span>
   </div>
   </a>
 
   <a href="{{ design.plan_3d.url }}">
-<div class="dowload_button">
-    <span>Télécharger les plans 3D</span>
-</div>
-</a>
+  <div class="dowload_button">
+    <span>Plans 3D</span>
+  </div>
+  </a>
 
-<a href="{{ design.assembly_instruction.url }}">
-<div class="dowload_button">
-  <span>Télécharger la notice</span>
-</div>
-</a>
+  <a href="{{ design.assembly_instruction.url }}">
+  <div class="dowload_button">
+  <span>Notice</span>
+  </div>
+  </a>
+
 
   </div>
 
-  <div>
-    <p>{{ design.description }}</p>
-    <p>{{ design.user_id.id }}</p>
-    <p><a href="{% url 'email_user' design.user_id.id%}">Contacter {{ design.user_id }}</a></p>
-    </div>
+  <div class="box_in_design">
 
-  <a href="{% url 'make_offer' design.id%}">
-    <div class="dowload_button">
-      <span>Faire une offre</span>
-    </div>
-    </a>
+    <a href="{% url 'make_offer' design.id%}">
+      <div class="dowload_button">
+        <span>Faire une offre</span>
+      </div>
+      </a>
 
-  <a href="{% url 'offers_on_design' design.id%}">
-    <div class="dowload_button">
-      <span>Voir les offres</span>
-    </div>
-    </a>
+    <a href="{% url 'offers_on_design' design.id%}">
+      <div class="dowload_button">
+        <span>Voir les offres</span>
+      </div>
+      </a>
+
+      {% if user.is_authenticated %}
+    <a href="{% url 'email_user' design.user_id.id%}">
+      <div class="dowload_button">
+        <span>Contacter {{ design.user_id }}</span>
+      </div>
+      </a>
+
+      {% endif %}
+  </div>
+
 
   </section>
   {% endfor %}
-
-
 
 </section>
 

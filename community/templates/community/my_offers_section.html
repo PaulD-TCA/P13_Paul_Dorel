@@ -1,17 +1,26 @@
 <section class="middle_part">
 
-<section class="profil_space">
+<section class="design_space">
 
-  <h3 class="standard-title">
-  mes offres page
-    </h3>
+  <h3 class="main_subtitle">  Mes offres  </h3>
   {% for offer in offer_list %}
+  <section class="catalog_design">
+
+<img src="{{ offer.design_image.url }}" alt="A design_picture" height="300">
+<div class="box_in_design">
+<p>{{ offer.offer_title }}</p>
+<h2>{{ offer.design.design_name }}</h2>
+<p>{{ offer.description }}</p>
+<p>{{ design.description }}</p>
+</div>
+
   <h3>
   {{ offer.offer_title }}
     </h3>
   <p>
     {{ offer.price }}
     </p>
+    </section>
   {% endfor %}
 
 

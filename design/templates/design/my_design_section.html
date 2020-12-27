@@ -1,18 +1,61 @@
 <section class="middle_part">
 
-<section class="profil_space">
+<section class="design_space">
 
-mes designs page
+
+<h3 class="main_subtitle">Mes designs</h3>
 {% for design in designs %}
-  <p>{{ design.design_name }}<p/>
-    <p>{{ design.design_image }}<p/>
-    <p>{{ design.plan_2d }}<p/>
-    <p>{{ design.plan_3d }}<p/>
-    <p>{{ design.assembly_instruction }}<p/>
-    <p>{{ design.description }}<p/>
-    <p>{{ design.user_id }}<p/>
+<section class="catalog_design">
 
+<img src="{{ design.design_image.url }}" alt="A design_picture" height="300">
+
+<div class="box_in_design">
+<h2>{{ design.design_name }}</h2>
+<p>{{ design.description }}</p>
+</div>
+
+<div class="box_in_design">
+  <a href="{{ design.plan_2d.url }}">
+<div class="dowload_button">
+    <span>Plans 2D</span>
+</div>
+</a>
+
+<a href="{{ design.plan_3d.url }}">
+<div class="dowload_button">
+  <span>Plans 3D</span>
+</div>
+</a>
+
+<a href="{{ design.assembly_instruction.url }}">
+<div class="dowload_button">
+<span>Notice</span>
+</div>
+</a>
+
+
+</div>
+
+<div class="box_in_design">
+
+  <a href="{% url 'make_offer' design.id%}">
+    <div class="dowload_button">
+      <span>Faire une offre</span>
+    </div>
+    </a>
+
+  <a href="{% url 'offers_on_design' design.id%}">
+    <div class="dowload_button">
+      <span>Voir les offres</span>
+    </div>
+    </a>
+
+</div>
+
+
+</section>
 {% endfor %}
+
 
 
 </section>

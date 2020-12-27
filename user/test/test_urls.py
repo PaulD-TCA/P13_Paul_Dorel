@@ -1,6 +1,6 @@
 from django.test import SimpleTestCase
 from django.urls import reverse, resolve
-from user.views import user_login, user_logout, user_signup
+from user.views import user_login, user_logout, user_signup, personal_datas
 
 
 class TestUrls(SimpleTestCase):
@@ -15,3 +15,7 @@ class TestUrls(SimpleTestCase):
     def test_user_signup_url_resolved(self):
         url = reverse('signup')
         self.assertEquals(resolve(url).func, user_signup)
+
+    def test_personal_datas_url_resolved(self):
+        url = reverse('personal_datas')
+        self.assertEquals(resolve(url).func, personal_datas)
