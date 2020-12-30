@@ -7,6 +7,7 @@ urlpatterns = [
     path('design_list/', views.design_list, name='design_list'),
     path('upload_design/', views.upload_design, name='upload_design'),
     path('my_design/', views.my_design, name='my_design'),
+    path('results/', views.results, name='results'),
 ]
 
 if settings.DEBUG:

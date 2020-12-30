@@ -2,13 +2,11 @@
 
 <section class="design_space">
 
-
 <h3 class="main_subtitle">Mes designs</h3>
 {% for design in designs %}
 <section class="catalog_design">
 
 <img src="{{ design.design_image.url }}" alt="A design_picture" height="300">
-
 <div class="box_in_design">
 <h2>{{ design.design_name }}</h2>
 <p>{{ design.description }}</p>
@@ -33,7 +31,6 @@
 </div>
 </a>
 
-
 </div>
 
 <div class="box_in_design">
@@ -52,11 +49,8 @@
 
 </div>
 
-
 </section>
 {% endfor %}
-
-
 
 </section>
 

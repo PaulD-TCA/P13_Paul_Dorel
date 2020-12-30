@@ -19,11 +19,11 @@ class Design(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.product_name
+        return self.design_name
 
 class AddUserInfo(models.Model):
     "fields of additional user information table"
-    street = models.CharField(max_length=200)
+    street = models.CharField(max_length=50)
     zip_code = models.CharField(max_length=10)
     city = models.CharField(max_length=20)
     country = models.CharField(max_length=20)
@@ -51,7 +51,6 @@ class Offer(models.Model):
     design_id = models.ForeignKey(Design, on_delete=models.CASCADE)
     offer_title = models.CharField(max_length=50)
     date_offer = models.DateTimeField(auto_now_add=True)
-    date_updated = models.DateTimeField(auto_now_add=True)
     price = models.FloatField(null=True)
     carriage_price = models.FloatField(null=True)
     deadline = models.IntegerField()

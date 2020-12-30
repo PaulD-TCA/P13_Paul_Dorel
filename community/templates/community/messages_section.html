@@ -1,19 +1,50 @@
 <section class="middle_part">
 
-<section class="profil_space">
+<section class="design_space">
 
-<h3 class="standard-title">
-Messages page
+<h3 class="main_subtitle">
+Messages
   </h3>
 {% for message in messages_list %}
+<section id={{ message.id }} class=message_section>
+
 <h3>
-{{ message.title }}
+  Message envoyé par {{ message.user_id }} le {{ message.sended_date }}
   </h3>
+<h2>
+{{ message.title }}
+  </h2>
+
+
 <p>
   {{ message.content }}
   </p>
+
+
+<p><a class="button button1" onclick="deleteFunction(this)" name={{ message.id }} role="button">Supprimer le message</a></p>
+
+</section>
+
 {% endfor %}
 
 </section>
 
 </section>
+
+<script>
+  function deleteFunction(obj) {
+    let messageID = obj.getAttribute("name")
+    let little_delete_btn = document.getElementById(messageID)
+    little_delete_btn.innerHTML = '';
+    $.ajax({
+        url: "{% url 'delete_message' %}",
+        type: "POST",
+        data: {
+          messageToDelete: messageID,
+          csrfmiddlewaretoken: '{{ csrf_token }}'
+        },
+      });
+      alert("Le message a été supprimé");
+    return false;
+  }
+</script>

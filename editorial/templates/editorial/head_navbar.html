@@ -6,6 +6,7 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
 
         <title>TEC ET ART</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
 
     <body>
@@ -18,18 +19,16 @@
               </a>
             </div>
 
-            <form id='fname' name='fname' class="form-inline" method="post">
+            <form id='fname' name='fname' class="form-inline" method="post" action="{% url 'results' %}">
               {% csrf_token %}
-
+              <div class="md-form my-0">
                 <input class="input_button button4" type="text" placeholder="Objet à rechercher" name="your_name" maxlength="100" required>
-
+              </div>
             </form>
 
                 <a href="{% url 'design_list' %}">
               <div class="button button1">
-
                   <span>Designs</span>
-
                 </div>
                 </a>
 

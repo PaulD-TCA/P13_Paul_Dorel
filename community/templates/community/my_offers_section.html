@@ -2,24 +2,21 @@
 
 <section class="design_space">
 
-  <h3 class="main_subtitle">  Mes offres  </h3>
+  <h3 class="main_subtitle">Mes offres</h3>
   {% for offer in offer_list %}
-  <section class="catalog_design">
+  <section id={{ offer.id }} class="catalog_design">
 
-<img src="{{ offer.design_image.url }}" alt="A design_picture" height="300">
+<img src="{{ offer.design_id.design_image.url }}" alt="A design_picture" height="300">
 <div class="box_in_design">
-<p>{{ offer.offer_title }}</p>
-<h2>{{ offer.design.design_name }}</h2>
-<p>{{ offer.description }}</p>
-<p>{{ design.description }}</p>
+  <h2>{{ offer.design_id.design_name }}</h2>
+  <p>{{ offer.design_id.description }}</p>
 </div>
-
-  <h3>
-  {{ offer.offer_title }}
-    </h3>
-  <p>
-    {{ offer.price }}
-    </p>
+<div class="box_in_design">
+  <h2>{{ offer.offer_title }}</h2>
+  <p class="standard-title">Prix: {{ offer.price }} €</p>
+  <p>Prix du transport: {{ offer.carriage_price }} €</p>
+  <p><a class="button button1" onclick="deleteFunction(this)" name={{ offer.id }} role="button">Supprimer l'offre</a></p>
+</div>
     </section>
   {% endfor %}
 
@@ -27,3 +24,21 @@
 </section>
 
 </section>
+
+<script>
+  function deleteFunction(obj) {
+    let offerID = obj.getAttribute("name")
+    let little_delete_btn = document.getElementById(offerID)
+    little_delete_btn.innerHTML = '';
+    $.ajax({
+        url: "{% url 'delete_offer' %}",
+        type: "POST",
+        data: {
+          offerToDelete: offerID,
+          csrfmiddlewaretoken: '{{ csrf_token }}'
+        },
+      });
+      alert("L'offre a été supprimé");
+    return false;
+  }
+</script>

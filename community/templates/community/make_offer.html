@@ -2,18 +2,21 @@
 
 <section class="middle_part">
 
-<section class="profil_space">
+<section class="design_space">
 
 
 {% block content %}
-<h3 class="standard-title">
-  make offer
-</h3>
-<form method="post" enctype="multipart/form-data">
+<h3 class="main_subtitle">Faire une offre</h3>
+<form class="offer_box" method="post" enctype="multipart/form-data">
   {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Publier l'offre</button>
+  {% for field in form %}
+    {{ field }}
+
+    {% endfor %}
+<button class="button" type="submit">Publier l'offre</button>
   </form>
+
+
 {% endblock %}
 
 </section>

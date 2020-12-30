@@ -4,27 +4,13 @@
 
 <section class="profil_space">
 
-
-<h3 class="standard-title">
-  Liste d'offres
-
-  </h3>
 {% for offer in offer_list %}
+<h3 class="standard-title">Liste d'offres pour l'objet {{ offer.design_id }}</h3>
 <h3>
-{{ offer.offer_title }}
+{{ offer.user_id }} propose cet objet pour {{ offer.price }} € et {{ offer.carriage_price }} € de transport. <a href="{% url 'email_user' offer.user_id.id%}">Contacter {{ offer.user_id }}</a>
   </h3>
-<p>
-  {{ offer.price }}
-  </p>
-
-  <div>
-
-    <p><a href="{% url 'email_user' offer.user_id.id%}">Contacter {{ offer.user_id }}</a></p>
-    </div>
-
 
 {% endfor %}
-
 
 </section>
 

@@ -11,7 +11,7 @@ def home(request):
     return HttpResponse(template.render(context, request))
 
 def project_presentation(request):
-    """Display the main web page."""
+    """Display the project presentation page."""
     template = loader.get_template('editorial/project_presentation.html')
     context = {}
     return HttpResponse(template.render(context, request))
